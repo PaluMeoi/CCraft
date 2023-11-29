@@ -12,16 +12,18 @@ local function move()
 end
 
 local function goRight(x)
-    for i = 0,x,1 do
-        turtle.turnRight()
-        move()
+    turtle.turnRight()
+    move()
+    if x == 2 then
+        turle.turnRight()
     end
 end
 
 local function goLeft(x)
-    for i = 0,x,1 do
+    turtle.turnLeft()
+    move()
+    if x == 2 then
         turtle.turnLeft()
-        move()
     end
 end
 
