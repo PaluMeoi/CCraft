@@ -45,6 +45,7 @@ local function takeAction(blockName)
     else
         move()
     end
+end
 
 while true do
     if turtle.detect() then
