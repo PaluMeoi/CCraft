@@ -34,7 +34,7 @@ local takeAction(blockName)
         goLeft()
     elseif blockName == right then
         goRight()
-    elseif blockName == reset then
+    elseif blockName == "minecraft:chest" then
         refuel()
     else:
         move()
