@@ -1,9 +1,9 @@
-function local move()
+local function move()
     turtle.forward()
     turtle.placeDown()
 end
 
-function local turnAround()
+local function turnAround()
     turtle.turnRight()
     move()
     turtle.turnRight()
