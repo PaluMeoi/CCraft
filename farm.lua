@@ -15,7 +15,7 @@ local function goRight(x)
     turtle.turnRight()
     move()
     if x == 2 then
-        turle.turnRight()
+        turtle.turnRight()
     end
 end
 
