@@ -26,13 +26,19 @@ local function refuel()
     local status, block = turtle.inspect()
     turtle.suckUp()
     turtle.refuel()
-    takeAction(block.name)
+    if block.name == left then
+        turtle.turnLeft()
+    else
+        turtle.turnRight()
+    end
 end
 
 local takeAction(blockName)
     if blockName == left then
         goLeft()
+        goLeft()
     elseif blockName == right then
+        goRight()
         goRight()
     elseif blockName == "minecraft:chest" then
         refuel()
