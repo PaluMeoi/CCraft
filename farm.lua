@@ -29,9 +29,11 @@ end
 
 local function refuel()
 --     Check there's a block in front
+    turtle.select(1)
     local status, block = turtle.inspect()
     turtle.suckUp()
     turtle.refuel()
+    turtle.select(13)
     if block.name == left then
         turtle.turnLeft()
     else
@@ -57,6 +59,11 @@ local function takeAction(blockName)
         move()
     end
 end
+
+-- Start up fueling
+turtle.select(1)
+turtle.refuel()
+turtle.select(13)
 
 while true do
     if turtle.detect() then
