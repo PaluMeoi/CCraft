@@ -50,6 +50,7 @@ local function takeAction(blockName)
             goLeft(1)
         else
             goRight(1)
+        end
     else
         move()
     end
