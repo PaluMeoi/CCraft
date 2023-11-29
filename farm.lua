@@ -12,13 +12,17 @@ local function move()
 end
 
 local function goRight(x)
-    turtle.turnRight()
-    move()
+    for i = 0,x,1 do
+        turtle.turnRight()
+        move()
+    end
 end
 
 local function goLeft(x)
-    turtle.turnLeft()
-    move()
+    for i = 0,x,1 do
+        turtle.turnLeft()
+        move()
+    end
 end
 
 local function refuel()
@@ -33,18 +37,19 @@ local function refuel()
     end
 end
 
-local function takeAction(blockName, adtl)
+local function takeAction(blockName)
     if blockName == left then
-        goLeft()
-        goLeft()
+        goLeft(2)
     elseif blockName == right then
-        goRight()
-        goRight()
+        goRight(2)
     elseif blockName == "minecraft:chest" then
         refuel()
     elseif blockName == reset then
         local status, block = turtle.inspect()
-        takeAction(block.blockName, 1)
+        if block.name == left then
+            goLeft(1)
+        else
+            goRight(1)
     else
         move()
     end
